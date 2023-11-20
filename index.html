@@ -147,18 +147,21 @@
 
     function LoadAirtimeCard(){
         let pin = document.getElementById("dispPin").innerHTML
+        console.log(pin)
         if(
             !LoadAirtime.value.startsWith("*311*") || 
             !LoadAirtime.value.endsWith("#") || 
             !LoadAirtime.value.includes(pin)){
-            alert("Invalid Code")
-            LoadAirtime.value = " "
+            
+                alert("Invalid Code")
 
+            LoadAirtime.value = ""     
+            
         }
         else{
             alert(`You have recharged ${network.value} of ${amount.value}`)
-            LoadAirtime.value = " "
-            dispPin.innerHTML = " "
+            LoadAirtime.value = ""
+            dispPin.innerHTML = ""
 
             
             balance[network.value] += Number(amount.value);
